@@ -705,10 +705,10 @@ install-data-local: $(srcdir)/libisl-gdb.py
 	case $$libisl in \
 	'') echo Cannot find isl library name. GDB bindings not installed.;; \
 	*) echo $(INSTALL_DATA) $(srcdir)/libisl-gdb.py \
-		$(DESTDIR)$(libdir)/$$libisl-gdb.py; \
-	test -z "$(libdir)" || $(MKDIR_P) "$(DESTDIR)$(libdir)"; \
+		$(DESTDIR)$(prefix)/share/gdb/auto-load$(libdir)/$$libisl-gdb.py; \
+	test -z "$(libdir)" || $(MKDIR_P) "$(DESTDIR)$(prefix)/share/gdb/auto-load$(libdir)"; \
 	$(INSTALL_DATA) $(srcdir)/libisl-gdb.py \
-	    $(DESTDIR)$(libdir)/$$libisl-gdb.py; \
+		$(DESTDIR)$(prefix)/share/gdb/auto-load$(libdir)/$$libisl-gdb.py; \
 	esac
 
 uninstall-local:
